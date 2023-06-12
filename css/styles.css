@@ -1,4 +1,6 @@
-
+html{
+    scroll-behavior: smooth;
+}
 .inline-block{
     display: inline-block;
 }
@@ -30,16 +32,19 @@
     max-height: fit-content;
     > li{
         margin: 10px;
+        padding:10px;
     }
-    > li h4{
+    > li a{
         margin: 5px;
         padding: 5px;
+        color:black;
+        text-decoration-line: none;
+        font-weight: bold;
     }
 }
 
 /*Assigning grid areas to the navbar items*/
-.projectButton
-{
+.projectButton{
     grid-area: area1;
 }
 .resumeButton{
@@ -49,8 +54,10 @@
     background-color: #33bbff;
     grid-area: area3;
     border-radius: 30px;
-    > h4{
+    > a{
         color:white;
+        text-decoration-line: none;
+        font-weight: bold;
     }
 }
 /*Creating the container for the persona*/
@@ -238,8 +245,8 @@ footer li{
 }
 /*Setting styles to social media footer icons*/
 .socialMediaIcon{
-    margin: 10px;
-    padding: 5px;
+    margin: 3px;
+    padding: 2px;
     max-width: 50px;
     width:100%;
 }
