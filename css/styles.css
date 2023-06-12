@@ -1,9 +1,15 @@
+
 .inline-block{
     display: inline-block;
-
+}
+/*Adding font to all elements */
+*{
+    font-size: large;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-.flexContainer{
+/*Creating the flex and grid containers for the navbar*/
+.navbarFlexContainer{
     display:flex;
     flex-direction: column;
     background-image: linear-gradient(to right, #C72B6A, #FBB292);
@@ -12,50 +18,68 @@
     display: flex;
     justify-content: flex-end;
 }
+.navGridContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr;
+    grid-template-areas: "area1 area2 area3";
+    margin-right: 20px;
+}
 .navGridItem{
     max-width: fit-content;
     max-height: fit-content;
+    > li{
+        margin: 10px;
+    }
     > li h4{
         margin: 5px;
         padding: 5px;
     }
 }
 
-.navGridContainer{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr;
-    grid-template-areas: "area1 area2 area3";
+/*Assigning grid areas to the navbar items*/
+.projectButton
+{
+    grid-area: area1;
 }
-
-.gridContainer{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "area1 area2 area3";
+.resumeButton{
+    grid-area: area2;
 }
-
+.contactButton{
+    background-color: #33bbff;
+    grid-area: area3;
+    border-radius: 30px;
+    > h4{
+        color:white;
+    }
+}
+/*Creating the container for the persona*/
 .personaContainer{
     display:flex;
     flex-direction: column;
     justify-content: left;
     > h1{
-        margin: 5px;
-        padding: 0px;
+        margin: 10px;
     }
     > h2{
-        margin: 5px 10px 10px 10px;
+        margin: 5px 10px 20px 10px;
     }
 }
-
+/*Setting styling to the image*/
 .heroImg{
     margin: 10px auto 5px  10px;
     width: 75%;
     max-width: 400px;
     min-width: 300px;
 }
+.personaName{
+    font-size: larger;
+}
+.personaDescription{
+    font-size: large;
+}
 
-/* About Me Grid */
+/*Creating the About Me Grid */
 .aboutMeGridContainer{
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -65,24 +89,68 @@
     "aboutTxt aboutImg";
 }
 
+/*Assigning grid positions*/
 .aboutMeH1{
     grid-area: abouth1;
+    justify-self: center;
 }
 .aboutMeTxt{
     grid-area: aboutTxt;
+    max-width: 400px;
+    min-width: 200px;
+    justify-self: right;
 }
 .aboutMeImg{
     grid-area: aboutImg;
+    max-width: 400px;
+    min-width: 200px;
+    width: 100%;
+    align-self: center;
     vertical-align: center;
+    justify-self: left;
 }
 
-.projectImg{
-    margin: 0 auto;
-    max-width: 350px;
+/*Creating the projects grid container*/
+.gridContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 2fr;
+    grid-template-areas: 
+    "h1 h1 h1"
+    "project1 project2 project3";
 }
+
+/*Setting styling to all project divs*/
 .project{
     margin:20px;
     padding:15px;
+}
+/*Style only for the project images*/
+.projectImg{
+    margin: 0 auto;
+    max-width: 350px;
+    min-width: 100px;
+    width: 100%
+}
+
+/*#project{
+    background-color: lightskyblue;
+    border-radius: 30px;
+}*/
+
+/*Assigning grid positions to project items*/
+.gridSlot1{
+    grid-area: h1;
+    justify-self: center;
+}
+.gridSlot2{
+    grid-area: project1;
+}
+.gridSlot3{
+    grid-area: project2;
+}
+.gridSlot4{
+    grid-area: project3;
 }
 
 /* My UX Skills using CSS Flex */
@@ -94,6 +162,54 @@
     >div p{
         margin: 25px;    
     }
+}
+.skillsH1{
+    align-self: center;
+}
+
+/*Creating the Contact grid section*/
+.contactGrid{
+    display:grid;
+    grid-template-columns: 1f 1f;
+    grid-template-rows: 1f 1f 1f 2f;
+    grid-template-areas: 
+    "contactMe contactMe"
+    "name phone"
+    "email empty"
+    "message message";
+}
+
+/*Setting style to all input elements*/
+.inputStyle{
+    background: none;
+    border-style: none;
+    box-sizing: border-box;
+    text-decoration: underline;
+    text-decoration-color: grey;
+    margin: 15px;
+    padding: 5px;
+}
+/*Assigning grid positions*/
+.contactMeH1
+{
+    grid-area: contactMe;
+    justify-self: center;
+}
+.nameInput{
+    grid-area: name;
+    justify-self: right;
+}
+.emailInput{
+    grid-area: email;
+    justify-self: right;
+}
+.phoneNumberInput{
+    grid-area: phone;
+    justify-self: left;
+}
+.messageInput{
+    grid-area: message;
+    justify-self: center;
 }
 
 /*Coding the Footer CSS*/
@@ -115,33 +231,45 @@ footer li{
     padding: 5px 15px;
 }
 
-/*Adding font to all elements */
-*{
-    font-size: large;
-    font-family: Arial;
+/*Footer Container*/
+.footerFlexContainer{
+    display:flex;
+    justify-content: center;
 }
-.gridSlot1{
-    grid-area: area1;
-}
-
-.gridSlot2{
-    grid-area: area2;
-}
-
-
-.gridSlot3{
-    grid-area: area3;
+/*Setting styles to social media footer icons*/
+.socialMediaIcon{
+    margin: 10px;
+    padding: 5px;
+    max-width: 50px;
+    width:100%;
 }
 
+/*Making the page responsive to mobile devices*/
 @media only screen and (max-width:600px){
     .gridContainer{
         display:grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0.25 1fr 1fr 1fr;
         grid-template-areas: 
-        "area1" 
-        "area2" 
-        "area3";
+        "h1" 
+        "project1" 
+        "project2"
+        "project3";
     }
 
+    .aboutMeGridContainer{
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-rows: .2fr 2fr 2fr;
+        grid-template-areas: 
+        "abouth1"
+        "aboutImg" 
+        "aboutTxt";
+    }
+    .aboutMeTxt{
+        justify-self: center
+    }
+    .aboutMeImg{
+        justify-self: center;
+    }
 }
