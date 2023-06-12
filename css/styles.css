@@ -1,0 +1,147 @@
+.inline-block{
+    display: inline-block;
+
+}
+
+.flexContainer{
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #C72B6A, #FBB292);
+}
+.navFlex{
+    display: flex;
+    justify-content: flex-end;
+}
+.navGridItem{
+    max-width: fit-content;
+    max-height: fit-content;
+    > li h4{
+        margin: 5px;
+        padding: 5px;
+    }
+}
+
+.navGridContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr;
+    grid-template-areas: "area1 area2 area3";
+}
+
+.gridContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "area1 area2 area3";
+}
+
+.personaContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    > h1{
+        margin: 5px;
+        padding: 0px;
+    }
+    > h2{
+        margin: 5px 10px 10px 10px;
+    }
+}
+
+.heroImg{
+    margin: 10px auto 5px  10px;
+    width: 75%;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+/* About Me Grid */
+.aboutMeGridContainer{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: .2fr 2fr;
+    grid-template-areas: 
+    "abouth1 abouth1"
+    "aboutTxt aboutImg";
+}
+
+.aboutMeH1{
+    grid-area: abouth1;
+}
+.aboutMeTxt{
+    grid-area: aboutTxt;
+}
+.aboutMeImg{
+    grid-area: aboutImg;
+    vertical-align: center;
+}
+
+.projectImg{
+    margin: 0 auto;
+    max-width: 350px;
+}
+.project{
+    margin:20px;
+    padding:15px;
+}
+
+/* My UX Skills using CSS Flex */
+.skillsFlexContainer{
+    margin: 25px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    >div p{
+        margin: 25px;    
+    }
+}
+
+/*Coding the Footer CSS*/
+footer{
+    text-align: center;
+    background-image: linear-gradient(to right, #C72B6A, #FBB292);
+    padding: 30px;
+    position:relative;
+}
+footer ul{
+    display:inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align:top;
+}
+
+footer li{
+    float: center;
+    padding: 5px 15px;
+}
+
+/*Adding font to all elements */
+*{
+    font-size: large;
+    font-family: Arial;
+}
+.gridSlot1{
+    grid-area: area1;
+}
+
+.gridSlot2{
+    grid-area: area2;
+}
+
+
+.gridSlot3{
+    grid-area: area3;
+}
+
+@media only screen and (max-width:600px){
+    .gridContainer{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "area1" 
+        "area2" 
+        "area3";
+    }
+
+}
